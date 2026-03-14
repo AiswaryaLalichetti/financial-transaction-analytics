@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-  schedule:
-    - cron: "0 6 * * *"
 
 jobs:
   dbt-run:
@@ -22,7 +20,7 @@ jobs:
 
       - name: Install DBT
         run: |
-          pip install dbt-snowflake
+          pip install dbt-snowflake==1.11.3
 
       - name: Create DBT profiles
         run: |
@@ -34,7 +32,7 @@ jobs:
               dev:
                 type: snowflake
                 account: wo98697.us-east-2.aws
-                user: AISWARYALALICHETTI
+                user: USERNAME
                 password: ${{ secrets.SNOWFLAKE_PASSWORD }}
                 role: ACCOUNTADMIN
                 warehouse: FINTECH_WH
@@ -46,9 +44,9 @@ jobs:
       - name: Run DBT models
         run: |
           cd dbt_project
-          dbt run
+          dbt run --profiles-dir ~/.dbt
 
       - name: Run DBT tests
         run: |
           cd dbt_project
-          dbt test
+          dbt test --profiles-dir ~/.dbt
