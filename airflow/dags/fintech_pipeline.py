@@ -13,8 +13,8 @@ default_args = {
     'retry_delay': timedelta(minutes=5),
 }
 
-AWS_ACCESS_KEY = 'AKIATMR2WHDNEEPOWHHN'
-AWS_SECRET_KEY = 'QVbrDnUzRRMnMk2t+ZxowDs8H48HED/qX0CNJN/F'
+AWS_ACCESS_KEY = 'YOUR_AWS_ACCESS_KEY'
+AWS_SECRET_KEY = 'YOUR_AWS_SECRET_KEY'
 REGION = 'us-east-1'
 GLUE_JOB_NAME = 'fintech-transform-transactions'
 
@@ -22,8 +22,8 @@ def trigger_glue_job():
     client = boto3.client(
         'glue',
         region_name=REGION,
-        aws_access_key_id='AKIATMR2WHDNEEPOWHHN',
-        aws_secret_access_key='QVbrDnUzRRMnMk2t+ZxowDs8H48HED/qX0CNJN/F'
+        aws_access_key_id='YOUR_AWS_ACCESS_KEY',
+        aws_secret_access_key='YOUR_AWS_SECRET_KEY'
     )
     response = client.start_job_run(JobName=GLUE_JOB_NAME)
     print("Glue job started: " + response['JobRunId'])
@@ -34,8 +34,8 @@ def check_glue_job(**context):
     client = boto3.client(
         'glue',
         region_name=REGION,
-        aws_access_key_id=AWS_ACCESS_KEY,
-        aws_secret_access_key=AWS_SECRET_KEY
+        aws_access_key_id='AWS_ACCESS_KEY',
+        aws_secret_access_key='AWS_SECRET_KEY'
     )
     response = client.get_job_run(
         JobName=GLUE_JOB_NAME,
