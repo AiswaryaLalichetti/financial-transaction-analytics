@@ -1109,3 +1109,14 @@ SELECT * FROM final
 [0m13:40:37.333630 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002234BE93F80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002234F9C85F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002234F9CB050>]}
 [0m13:40:37.334740 [debug] [MainThread]: Flushing usage events
 [0m13:40:37.917973 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:43:33.432571 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017F3EF2FA10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017F423DE390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017F423DF860>]}
+
+
+============================== 15:43:33.441576 | 3d44f451-4cc3-4f50-ac2d-19f6f685e839 ==============================
+[0m15:43:33.441576 [info ] [MainThread]: Running with dbt=1.11.7
+[0m15:43:33.442531 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\12142\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'invocation_command': 'dbt clean', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\12142\\financial-transaction-analytics\\dbt_project\\logs'}
+[0m15:43:33.638752 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3d44f451-4cc3-4f50-ac2d-19f6f685e839', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017F42B32570>]}
+[0m15:43:33.684514 [debug] [MainThread]: Command `dbt clean` succeeded at 15:43:33.684514 after 0.44 seconds
+[0m15:43:33.684514 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017F41DB62A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017F3EE5C0E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017F42973B30>]}
+[0m15:43:33.685585 [debug] [MainThread]: Flushing usage events
+[0m15:43:34.342077 [debug] [MainThread]: An error was encountered while trying to flush usage events
