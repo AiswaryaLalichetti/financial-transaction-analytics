@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
@@ -23,6 +23,8 @@ jobs:
           pip install dbt-snowflake==1.11.3
 
       - name: Create DBT profiles
+        env:
+          SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
         run: |
           mkdir -p ~/.dbt
           cat > ~/.dbt/profiles.yml << EOF
@@ -32,8 +34,8 @@ jobs:
               dev:
                 type: snowflake
                 account: wo98697.us-east-2.aws
-                user: USERNAME
-                password: ${{ secrets.SNOWFLAKE_PASSWORD }}
+                user: AISWARYALALICHETTI
+                password: "${SNOWFLAKE_PASSWORD}"
                 role: ACCOUNTADMIN
                 warehouse: FINTECH_WH
                 database: FINTECH_DB
