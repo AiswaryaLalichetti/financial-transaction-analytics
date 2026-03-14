@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 import boto3
 
 default_args = {
-    'owner': 'aiswarya',
+    'owner': 'ownername',
     'depends_on_past': False,
     'email_on_failure': False,
     'email_on_retry': False,
